@@ -1,0 +1,184 @@
+:root {
+  --bg-dark: #0b1120; 
+  --card-bg: #111827; 
+  --accent: #3b82f6; 
+  --accent-hover: #2563eb;
+  --text-main: #f3f4f6;
+  --text-muted: #9ca3af;
+  --border: #1f2937; 
+  --success: #10b981;
+  --error: #ef4444;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', -apple-system, system-ui, sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  -webkit-font-smoothing: antialiased;
+}
+
+.app-shell {
+  width: 100%;
+  max-width: 1400px; 
+  padding: 60px 30px;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+  padding: 24px 32px;
+  background-color: var(--card-bg);
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.app-header h1 {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Широкие колонки */
+  gap: 30px; /* Больше расстояние между карточками */
+  align-items: start;
+}
+
+.section-card {
+  background-color: var(--card-bg);
+  padding: 32px; /* Больше внутренних отступов */
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+}
+
+.section-card h2 {
+  font-size: 20px;
+  margin-bottom: 24px;
+  color: var(--text-main);
+  font-weight: 700;
+}
+
+.section-card h3 {
+  font-size: 16px;
+  margin-top: 24px;
+  margin-bottom: 16px;
+  color: var(--text-muted);
+}
+
+.dashboard header h2 {
+  font-size: 36px; 
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.dashboard header p {
+  color: var(--text-muted);
+  font-size: 16px;
+}
+
+.status-pill {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 16px;
+  border-radius: 100px;
+  background: rgba(59, 130, 246, 0.1);
+  color: var(--accent);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+/* Таблицы */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  text-align: left;
+  font-size: 13px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 16px 8px;
+  border-bottom: 2px solid var(--border);
+}
+
+td {
+  padding: 20px 8px; 
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  font-size: 15px;
+}
+
+/* Формы */
+input, select {
+  width: 100%;
+  padding: 16px; 
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  color: var(--text-main);
+  font-size: 15px;
+  margin-bottom: 16px;
+  transition: all 0.2s;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+button {
+  width: 100%;
+  padding: 16px;
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+button.logout-button {
+  width: auto;
+  padding: 10px 24px;
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--error);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  font-size: 14px;
+}
+
+button.logout-button:hover {
+  background: var(--error);
+  color: white;
+}
+
+.error-message {
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--error);
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  font-size: 15px;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
